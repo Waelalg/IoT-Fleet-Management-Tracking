@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  broker:
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    container_name: fleet_backend
+    depends_on:
+      - broker
+    environment:
+      - MQTT_BROKER=broker
+      - MQTT_PORT=1883
+      - BACKEND_PORT=5002
+    ports:
+      - "5002:5002"
+    restart: unless-stopped
+
+  dashboard:
+    build:
+      context: ./dashboard
+      args:
+        REACT_APP_BACKEND_URL: "http://localhost:5002"
+    container_name: fleet_dashboard
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+
+  simulator:
+    build: ./devices/device_simulator
+    volumes:
+      - ./devices/device_simulator:/app
+    depends_on:
+      - broker
+    environment:
+      MQTT_BROKER: broker
+      MQTT_PORT: 1883
+    command: python geofence_simulator.py
+    restart: unless-stopped
