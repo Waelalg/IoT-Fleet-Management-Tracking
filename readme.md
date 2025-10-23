@@ -210,30 +210,33 @@ POST /api/protocols/lorawan/devices - Register LoRaWAN device
 POST /api/protocols/lorawan/{dev_eui}/downlink - Send LoRaWAN command
 
 
-**🚀 Advanced Features**<img width="1919" height="926" alt="Screenshot 2025-10-23 112750" src="https://github.com/user-attachments/assets/61ce9587-35ab-40ca-82f7-90daf86fe4dc" />
-<img width="1919" height="926" alt="Screenshot 2025-10-23 112750" src="https://github.com/user-attachments/assets/313169f2-ff75-46cc-aebc-5bcec09055e3" />
+**🚀 Advanced Features**
 
 **Edge Computing**
-The system includes sophisticated edge computing capabilities:
 
-Anomaly Detection: Machine learning-based detection of abnormal device behavior
+ The system includes sophisticated edge computing capabilities:
 
-Data Compression: Smart compression to reduce bandwidth usage
+ Anomaly Detection: Machine learning-based detection of abnormal device behavior
 
-Local Processing: Edge-based processing for faster response times
+ Data Compression: Smart compression to reduce bandwidth usage
+
+ Local Processing: Edge-based processing for faster response times
 
 **Predictive Maintenance**
-Health Scoring: Calculates device health based on multiple factors
 
-Battery Analysis: Tracks battery degradation over time
+ Health Scoring: Calculates device health based on multiple factors
 
-Maintenance Prediction: Predicts when maintenance will be required
+ Battery Analysis: Tracks battery degradation over time
 
-Automated Alerts: Sends alerts for critical maintenance needs
+ Maintenance Prediction: Predicts when maintenance will be required
+
+ Automated Alerts: Sends alerts for critical maintenance needs
 
 **Industrial Protocol Support**
-OPC-UA: Industrial automation standard for secure data exchange
 
-Modbus: Serial communication protocol for industrial devices
+ OPC-UA: Industrial automation standard for secure data exchange
 
-LoRaWAN: Long-range, low-power protocol for IoT devices
+ Modbus: Serial communication protocol for industrial devices
+
+ LoRaWAN: Long-range, low-power protocol for IoT devices
+
